@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Creazione Articolo</title>
+    <script>
+        function creaArticolo() {
+            let titolo = document.getElementById("titolo").value;
+            let paragrafo = document.getElementById("paragrafo").value;
+            let data = new Date().toLocaleDateString();
+
+            if (titolo == "" || paragrafo == "") {
+                alert("Titolo e paragrafo devono essere riempiti.");
+            } else {
+                let articolo = document.createElement("article");
+                let h2 = document.createElement("h2");
+                let p = document.createElement("p");
+                let span = document.createElement("span");
+
+                h2.innerHTML = titolo;
+                p.innerHTML = paragrafo;
+                span.innerHTML = "Data di pubblicazione: " + data;
+
+                articolo.appendChild(h2);
+                articolo.appendChild(p);
+                articolo.appendChild(span);
+
+                document.body.appendChild(articolo);
+
+                document.getElementById("titolo").value = "";
+                document.getElementById("paragrafo").value = "";
+            }
+        }
+    </script>
+</head>
+
+<body style="background-color: beige;">
+    <div style="text-align: center; background-color: brown;">
+        <h1>Inserisci i dati per creare un nuovo articolo:</h1>
+    </div>
+    <div style="align-items: center;background-color: black;">
+        <div style="display: block; align-items: center;justify-content: center; background-color: blue; ">
+            <input type="text" id="titolo" placeholder="Inserisci il titolo"><br><br>
+
+            <textarea id="paragrafo" rows="4" cols="50" placeholder="Inserisci il paragrafo"></textarea><br><br>
+        </div>
+    </div>
+    <div style="background-color: aqua; ">
+        <button onclick="creaArticolo()">Crea Articolo</button>
+    </div>
+</body>
+
+</html>

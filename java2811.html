@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java2811</title>
+
+    <style>
+        .paragrafo {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="paragrafo">Primo paragrafo</p>
+    <p class="paragrafo">Secondo paragrafo</p>
+    <p class="paragrafo">Terzo paragrafo</p>
+
+    <button onclick="cambiaColoreParagrafi()">Cambia Colore</button>
+    <button onclick="rendeGrassetto()">Grassetto</button>
+    <button onclick="nascondiParagrafi()">Nascondi</button>
+
+    <script src="script.js"></script>
+
+
+
+    
+<script>
+    // Definizione dell'oggetto persona
+    let persona = {
+        nome1: "Laura",
+        cognome1: "Rossi",
+        età: 20,
+        saluta: function () {
+            console.log("Ciao, sono " + this.nome1 + " " + this.cognome1 + ".");
+        }
+    };
+
+    persona.saluta();</script>
+
+
+<script>
+
+
+
+    // Creazione dell'oggetto agenda
+    let agenda = {
+        contatti: [{
+            nome: "Mario Rossi",
+            numero: "1234567890",
+        },
+
+        {
+            nome: "Laura Verdi",
+            numero: "1234561111",
+        },
+        {
+            nome: "Giorgio Bianchi",
+            numero: "1234500000",
+        },
+        ],
+
+        // Funzione per mostrare tutti i contatti dell'agenda
+        mostraContatti: function () {
+            console.log("Lista contatti dell'agenda:");
+
+            for (var i = 0; i < this.contatti.length; i++) {
+                console.log("Nome: " + this.contatti[i].nome + ", Numero di telefono: " + this.contatti[i].numero);
+            }
+        }
+        ,
+
+        // Funzione per mostrare un singolo contatto
+        mostraContatto: function (nome) {
+            for (var i = 0; i < this.contatti.length; i++) {
+                if (this.contatti[i].nome == nome) {
+                    console.log("Dettagli del contatto:");
+                    console.log("Nome: " + this.contatti[i].nome + ", Numero di telefono: " + this.contatti[i].numero);
+                    return;
+                }
+            }
+        },
+
+        // Funzione per eliminare un contatto dall'agenda
+        eliminaContatto: function (nome) {
+            for (var i = 0; i < this.contatti.length; i++) {
+                if (this.contatti[i].nome == nome) {
+                    this.contatti.splice(i, 1);
+                    console.log("Contatto eliminato con successo.");
+                    return;
+                }
+            }
+
+        },
+
+        // Funzione per aggiungere un nuovo contatto nell'agenda
+        aggiungiContatto: function (nome, numero) {
+            this.contatti.push({ nome: nome, numero: numero });
+            console.log("Contatto aggiunto con successo.");
+        },
+
+        // Funzione per modificare un contatto esistente
+        modificaContatto: function (nome, nuovoNumero) {
+            for (var i = 0; i < this.contatti.length; i++) {
+                if (this.contatti[i].nome == nome) {
+                    this.contatti[i].numero = nuovoNumero;
+                    console.log("Contatto modificato con successo.");
+                    return;
+                }
+            }
+
+        }
+    };
+
+    agenda.mostraContatti();
+
+    agenda.aggiungiContatto("Luigi Bianchi", "0987654321");
+
+    agenda.mostraContatti();
+
+    agenda.mostraContatto("Mario Rossi");
+
+    agenda.eliminaContatto("Laura Verdi");
+
+    agenda.modificaContatto("Mario Rossi", "5555555555");
+
+    agenda.mostraContatti();
+
+</script>
+
+
+<script>
+
+
+</script>
+
+</body>
+
+</html>
